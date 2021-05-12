@@ -639,7 +639,6 @@ type yaml_parser_t struct {
 }
 
 type yaml_comment_t struct {
-
 	scan_mark  yaml_mark_t // Position where scanning for comments started
 	token_mark yaml_mark_t // Position after which tokens will be associated with this comment
 	start_mark yaml_mark_t // Position of '#' comment mark
@@ -741,6 +740,8 @@ type yaml_emitter_t struct {
 	tag_directives []yaml_tag_directive_t // The list of tag directives.
 
 	indent int // The current indentation level.
+
+	disable_sequence_indent bool // Disable the indentation for sequence items
 
 	flow_level int // The current flow level.
 
